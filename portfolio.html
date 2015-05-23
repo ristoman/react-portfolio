@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Hello World!</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<style type="text/css">
+	.container{width:1920px;}
+	#side{
+		border-right:1px solid #eee;
+	}
+	#side a{display:block; clear:both; transition:	all 0.5s ease-out; text-decoration: none; color:black; opacity:0.5;}
+	#side a:hover{opacity:1;}
+	article{clear:both; display:block; margin:12px 0;}
+	.header h2, .header h6{margin-top:0; padding-top:0;}
+</style>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div id="side"></div>
+		</div>
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<div id="main"></div>
+		</div>
+	</div>
+</div>
+
+<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+<script src="https://fb.me/react-0.13.3.js"></script>
+<script src="projects.js"></script>
+
+<script type="text/jsx">
+	
+	/** @jsx React.DOM */
+
+	var Portfolio = React.createClass({
+		render: function(){
+			var projectNodes = this.props.data.map(function (project) {
+			    return (
+			    	<a href="#">
+			        	<Project name={project.name} tags={project.tags} desc={project.desc} />
+			        </a>
+			    );
+			});
+			return (
+      			<div className="portfolio">
+        			{projectNodes}
+      			</div>
+    		);
+		}
+	});
+
+	var Project = React.createClass({
+
+		render: function(){
+			return(
+				<article className="project">
+					<div className="row">
+						<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<img className="img-responsive" src='http://placehold.it/240x240' />
+						</div>
+						<div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+							<div className="header">
+								<h2>{this.props.name}</h2>
+								<h6>{this.props.tags}</h6>
+							</div>
+							<div className="desc">
+								<p>{this.props.desc}</p>
+							</div>
+						</div>
+					</div>
+				</article>
+			);
+		}
+	});
+
+	var Navigation = React.createClass({
+		render: function(){
+			return(
+				<nav className="nav-icons">
+					<ul>
+						<li className="prev">Prev</li>
+						<li className="next">Next</li>
+					</ul>
+				</nav>
+			)
+		}
+	});
+
+	var reactComponentJSX = React.render(
+		<Portfolio data={data} />, 
+		document.getElementById('side'),
+		null
+	);
+
+
+</script>
+
+</body>
+</html>
