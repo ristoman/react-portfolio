@@ -19755,19 +19755,27 @@ PortfolioPage = require('./PortfolioPage');
 			});
 
 			return(
-				React.createElement("div", {className: "container"}, 
-					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-xs-12 col-sm-4 col-md-4 col-lg-4"}, 
-							React.createElement("div", {id: "side"}, 	
-								React.createElement("div", {className: "portfolio"}, 
-        							projectNodes
-      							)
-							)
-						), 
-						React.createElement("div", {className: "col-xs-12 col-sm-8 col-md-8 col-lg-8"}, 
-							React.createElement("div", {id: "main"}, 
-								React.createElement(PortfolioPage, {project: this.props.data[this.state.focused]})
-							)
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "col-xs-12 col-sm-3 col-md-3 col-lg-3"}, 
+						React.createElement("div", {id: "side"}, 	
+							React.createElement("div", {className: "portfolioMenu"}, 
+    							projectNodes
+  							)
+						)
+					), 
+					React.createElement("div", {className: "col-xs-12 col-sm-7 col-md-7 col-lg-7"}, 
+						React.createElement("div", {id: "main"}, 
+							React.createElement(PortfolioPage, {project: this.props.data[this.state.focused]})
+						)
+					), 
+					React.createElement("div", {className: "col-xs-12 col-sm-2 col-md-2 col-lg-2"}, 
+						React.createElement("ul", null, 
+							React.createElement("li", null, "item #1"), 
+							React.createElement("li", null, "item #2"), 
+							React.createElement("li", null, "item #3"), 
+							React.createElement("li", null, "item #4"), 
+							React.createElement("li", null, "item #5"), 
+							React.createElement("li", null, "item #6")
 						)
 					)
 				)
@@ -19785,13 +19793,15 @@ var React = require('react');
 		render: function() {
 			return (
 	        	React.createElement("article", {className: "project"}, 
-					React.createElement("img", {className: "img-responsive", src: "http://placehold.it/150x150"}), 
-					React.createElement("div", {className: "header"}, 
-						React.createElement("h2", null, this.props.project.name), 
-						React.createElement("h6", null, this.props.project.tags)
-					), 
-					React.createElement("div", {className: "desc"}, 
-						React.createElement("p", null, this.props.project.desc)
+					React.createElement("img", {className: "img-responsive", src: "http://placehold.it/300x150"}), 
+					React.createElement("div", {className: "menuOverlay"}, 
+						React.createElement("div", {className: "header"}, 
+							React.createElement("h2", null, this.props.project.name), 
+							React.createElement("h6", null, this.props.project.tags)
+						), 
+						React.createElement("div", {className: "desc"}, 
+							React.createElement("p", null, this.props.project.desc)
+						)
 					)
 				)
 			);

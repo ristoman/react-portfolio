@@ -1,0 +1,51 @@
+body {
+  background-color: #2d5481;
+  color: white;
+}
+.page-header {
+  background-color: black;
+  width: 100%;
+  padding: 24px;
+  margin: 0;
+  border-bottom: 0;
+}
+#side {
+  float: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+#side .menuOverlay {
+  transition: all 0.3s ease-out;
+  position: relative;
+  bottom: 0;
+  padding: 1em;
+}
+#side img {
+  background-color: #000;
+  transition: all 0.5s ease-out;
+  opacity: 1;
+}
+#side a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#side a:hover .menuOverlay {
+  bottom: 10em;
+}
+#side a:hover img {
+  opacity: 0.25;
+}
+#side #portfolioMenu {
+  box-shadow: 0 0 12px rgba(18, 18, 26, 0.25);
+}
+#main {
+  margin-top: 24px;
+  width: 100%;
+}
+#stage {
+  padding: 3em 0;
+}
+article {
+  height: 11em;
+  overflow: hidden;
+}
