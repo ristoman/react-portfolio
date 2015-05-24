@@ -1,2 +1,3 @@
 ./npm-debug.log
-build/.module-cache/
+./src/npm-debug.log
+./build/.module-cache/*
